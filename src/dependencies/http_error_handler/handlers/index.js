@@ -1,5 +1,6 @@
 //* Importacion de dependencias
 const {ExceptionError} = require('../errors/exception.error');
+const {generateLogs} = require('../../utils')
 
 const errorCaught = (error, req, res, next) => {
 
@@ -16,6 +17,7 @@ const errorCaught = (error, req, res, next) => {
     }else{
         //? Si es un error desconocido, se obtiene y se retorna como un error 500
         errorCaught = new ExceptionError('INTERNAL_SERVER_ERROR',error.stack).toJSON();
+        generateLogs(error.stack)
     }
 
     //? Retorno de respuesta del error en JSON
