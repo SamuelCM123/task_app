@@ -7,7 +7,6 @@ module.exports = (dependencies) => {
 
     const welcomeController = async (req, res, next) => {
         try {
-            testLog()
             httpResponses.responseSuccess(res,{
                 status_code: statusCode.OK,
                 data: {
@@ -17,7 +16,7 @@ module.exports = (dependencies) => {
             })
 
         } catch (error) {
-            console.log('Welcome_controller_error',error);
+            // console.log('Welcome_controller_error',error);
             next(error);
         }
 

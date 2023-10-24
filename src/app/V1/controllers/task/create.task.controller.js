@@ -5,12 +5,18 @@ module.exports = (dependencies) => {
     
     const createTaskController = (req, res, next) => {
 
-        httpResponses.responseSuccess(res, {
-            status_code: statusCode.CREATED,
-            data: {
-                message: 'Creando tarea...'
-            }
-        })
+        try {
+            httpResponses.responseSuccess(res, {
+                status_code: statusCode.CREATED,
+                data: {
+                    message: 'Creando tarea...',
+                    body: req.body
+                }
+            });
+        } catch (error) {
+            console.log('CREATE_TASK_controller_error',error);
+            next(error);
+        }
 
     }
 

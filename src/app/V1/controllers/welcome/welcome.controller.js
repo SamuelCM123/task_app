@@ -15,7 +15,7 @@ module.exports = (dependencies) => {
             })
 
         } catch (error) {
-            console.log('Welcome_controller_error',error);
+            // console.log('Welcome_controller_error',error);
             next(error);
         }
 
