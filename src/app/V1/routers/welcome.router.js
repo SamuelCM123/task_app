@@ -12,7 +12,7 @@ module.exports = (dependencies) => {
     const welcomeRouter = Router();
 
     //* Definicio de rutas
-    welcomeRouter.get('/', welcomeController());
+    welcomeRouter.get('/', welcomeController(dependencies));
 
     return welcomeRouter
 }
