@@ -8,6 +8,7 @@ const dependencias = require('./src/dependencies');
 
 //* Importacion del run app de la aplicacion
 const { runApp } = require('./src/run.app');
+console.log('runApp',runApp);
 
 //* Importacion de los enrutadores principales
 const { appRouter } = require('./src/app/main.routes')
