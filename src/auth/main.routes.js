@@ -6,6 +6,9 @@ const {welcomeRouter} = require('./V1/routers')
 //* Importacion de dependencias
 const dependencies = require('../dependencies')
 
+//? Desestructuracion de dependencias
+const {httpError} = dependencies
+
 /**
  * @type {Express} Enrutador principal del ambiente 'auth'
  */
@@ -20,5 +23,8 @@ const PATH_URL = '/api/v1/auth';
 //* Servicios de server AUTH
 authRouter.use(`${PATH_URL}`,welcomeRouter(dependencies))
 
+// Middleware
+authRouter.use(httpError.serviceNotFound);
+authRouter.use(httpError.errorCaught);
 
 module.exports = {authRouter}
