@@ -2,7 +2,7 @@
 const {Router} = require('express');
 
 //* Importacion de enrutadores
-const {welcomeRouter} = require('./V1/routers')
+const {welcomeRouter,taskRouter} = require('./V1/routers')
 
 //* Importacion de dependencias
 const dependencies = require('../dependencies')
@@ -21,6 +21,7 @@ const appRouter = Router();
 const PATH_URL = '/api/v1/app';
 
 //* Servicios de server APP
+appRouter.use(`${PATH_URL}`,taskRouter(dependencies))
 appRouter.use(`${PATH_URL}`,welcomeRouter(dependencies))
 
 // Middleware
