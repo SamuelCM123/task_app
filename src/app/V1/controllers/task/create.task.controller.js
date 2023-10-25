@@ -32,7 +32,7 @@ module.exports = (dependencies) => {
 
             }
         } catch (error) {
-            console.log('CREATE_TASK_controller_error',error);
+            // console.log('CREATE_TASK_controller_error',error);
             next(error);
         }
 
