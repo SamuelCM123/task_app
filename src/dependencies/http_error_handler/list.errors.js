@@ -19,6 +19,14 @@ const listErrors = {
             message: `El servicio '${url}' que intenta llamar no esta disponible`,
             status_code: statusCode.NOT_FOUND
         })
+    },
+
+    VALIDATE_ERROR( error ){
+        return responseError({
+            code: 'B03',
+            message: error,
+            status_code: statusCode.BAD_REQUEST
+        })
     }
 }
 

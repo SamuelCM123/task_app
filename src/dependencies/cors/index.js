@@ -7,7 +7,7 @@ const cors = require('cors');
  */
 const allowedOriginsCors = () => {
     const {LIST_ORIGINS_CORS} = process.env
-    console.log("LIST_ORIGINS_CORS:",LIST_ORIGINS_CORS);
+    // console.log("LIST_ORIGINS_CORS:",LIST_ORIGINS_CORS);
 
     if(LIST_ORIGINS_CORS !== ''){
 
@@ -15,7 +15,7 @@ const allowedOriginsCors = () => {
          *  @type {Array} Lista de origenes permitidos.
          */
         const whiteList = LIST_ORIGINS_CORS.split('|')
-        console.log(whiteList);
+        // console.log(whiteList);
 
         return cors({
             origin: whiteList
