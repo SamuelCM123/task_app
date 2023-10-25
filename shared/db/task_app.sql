@@ -8,7 +8,7 @@ USE task_app;
 CREATE TABLE task_states (
 	task_state_id INT(11) AUTO_INCREMENT PRIMARY KEY,
     uuid_task_state VARCHAR(255) NOT NULL,
-    task_status VARCHAR(20) NOT NULL,
+    task_status VARCHAR(30) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -16,7 +16,7 @@ CREATE TABLE task_states (
 CREATE TABLE tasks (
 	task_id INT(11) AUTO_INCREMENT PRIMARY KEY,
 	uuid_task VARCHAR(255) NOT NULL,
-    title VARCHAR(20) NOT NULL,
+    title VARCHAR(30) NOT NULL,
     task_description VARCHAR(255) NOT NULL,
     task_state_id INT(11) NOT NULL DEFAULT 1,
     FOREIGN KEY (task_state_id) REFERENCES task_states(task_state_id),
