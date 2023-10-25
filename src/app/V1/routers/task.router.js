@@ -13,7 +13,8 @@ const {
     createTaskController,
     getTasksController,
     getTaskController,
-    updateTaskController
+    updateTaskController,
+    deleteTaskController
     } = taskControllers;
 
 //? Desestructuracion de reglas
@@ -51,6 +52,12 @@ module.exports = (dependencies) => {
             updateTaskRule(middlewares)
         ],  
         updateTaskController(dependencies) //*Controlador
+    );
+
+    taskRouter.delete(
+        '/task/:uuid_task', //*Servicio API
+        paramsTaskRule(middlewares), //* Reglas
+        deleteTaskController(dependencies) //*Controlador
     );
 
     return taskRouter;
