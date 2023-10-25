@@ -1,9 +1,9 @@
 module.exports = (dependencies) => {
-    console.log("Dependencias",dependencies);
+    // console.log("Dependencias",dependencies);
 
     //? Desestructuracion de dependencias
     const { statusCode, httpResponses } = dependencies;
-    console.log("StatusCode",statusCode);
+    // console.log("StatusCode",statusCode);
 
     const welcomeController = async (req, res, next) => {
         try {

@@ -7,8 +7,8 @@ const {sequelize} = require('../../sequelize');
 const modelConfig = {
     tableName: 'task_states',
     timestamps: true,
-    createAt: 'created_at',
-    updateAt: 'updated_at'
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
 }
 
 const TaskStates = sequelize.define('task_state',{
