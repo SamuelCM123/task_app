@@ -1,16 +1,18 @@
 //* Importacion de dependencias
 const {allowedOriginsCors} = require('./cors')
+const httpError = require('./http_error_handler')
 const httpResponses = require('./http_responses');
 const {statusCode} = require('./http_status_code');
-const httpError = require('./http_error_handler')
-const utils = require('./utils')
 const middlewares = require('./middlewares')
+const models = require('./models');
+const utils = require('./utils')
 
 module.exports = {
     allowedOriginsCors,
     httpError,
-    statusCode,
     httpResponses,
+    statusCode,
+    middlewares,
+    models,
     utils,
-    middlewares
 }
