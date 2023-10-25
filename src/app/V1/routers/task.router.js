@@ -12,10 +12,12 @@ const { taskRules } = require('../rules');
 const { 
     createTaskController,
     getTasksController,
-    getTaskController } = taskControllers;
+    getTaskController,
+    updateTaskController
+    } = taskControllers;
 
 //? Desestructuracion de reglas
-const { createTaskRule,paramsTaskRule } = taskRules
+const { createTaskRule,paramsTaskRule,updateTaskRule } = taskRules
 
 module.exports = (dependencies) => {
 
@@ -40,6 +42,15 @@ module.exports = (dependencies) => {
         '/task/:uuid_task', //*Servicio API
         paramsTaskRule(middlewares), //* Reglas
         getTaskController(dependencies) //*Controlador
+    );
+
+    taskRouter.put(
+        '/task/:uuid_task', //*Servicio API
+        [
+            paramsTaskRule(middlewares),
+            updateTaskRule(middlewares)
+        ],  
+        updateTaskController(dependencies) //*Controlador
     );
 
     return taskRouter;
