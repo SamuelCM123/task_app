@@ -13,19 +13,20 @@ module.exports = (models) => {
     }
 
     /**
-     * Caso de uso que obtiene todas las tareas.
+     * Caso de uso que obtiene una sola tarea.
      * @returns Lista de tareas.
      */
-    const getTasksCase = async () => {
+    const getTaskCase = async (uuidTask) => {
 
-        const tasks = await Tasks.findAll({
+        const task = await Tasks.findOne({
+            where: { uuid_task: uuidTask},
             attributes: excludeFields,
             include: taskStatesFields,
         });
         
-        return tasks;
+        return task;
 
     }
 
-    return getTasksCase;
+    return getTaskCase;
 }

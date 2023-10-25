@@ -27,6 +27,13 @@ const listErrors = {
             message: error,
             status_code: statusCode.BAD_REQUEST
         })
+    },
+    TASK_NOT_FOUND(){
+        return responseOK({
+            code: 'B04',
+            message: 'La tarea no se encuentra disponible',
+            status_code: statusCode.OK
+        })
     }
 }
 
